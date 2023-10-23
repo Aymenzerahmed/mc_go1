@@ -69,9 +69,9 @@ Go1::Go1() : mc_rbdyn::RobotModule(mc_rtc::GO1_DESCRIPTION_PATH, "go1")
     if(j.name() != "Root" && j.dof() > 0) { _stance[j.name()] = {standing.at(j.name())}; }
   }
   // // Default configuration of the floating base
-  _default_attitude = {1., 0., 0., 0., 0., 0., 0.35};
+  _default_attitude = {1., 0., 0., 0., 0., 0., 0.38};
 
-  _bodySensors.emplace_back("Accelerometer", "trunk", sva::PTransformd(Eigen::Vector3d(0., 0., 0.)));
+  _bodySensors.emplace_back("Accelerometer", "trunk", sva::PTransformd(Eigen::Vector3d(-0.01592, -0.06659, -0.00617)));
   _bodySensors.emplace_back("FloatingBase", "trunk", sva::PTransformd::Identity());
   // // Define a minimal set of self-collisions
   _minimalSelfCollisions = {{"FR_calf", "RR_thigh", 0.02, 0.01, 0.0},
